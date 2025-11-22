@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishva Fultariya | CSE Student Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font stack, defaulting to Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background matching GitHub theme */
+            color: #c9d1d9; /* Light text for contrast */
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        /* Custom glow effect for the hero text/card */
+        .hero-glow {
+            text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#0d1117] bg-opacity-95 shadow-lg backdrop-blur-sm border-b border-[#21262d]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold text-blue-400 hover:text-blue-300 transition duration-300 rounded-lg p-1">
+                V. F.
+            </a>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300 font-medium rounded-md">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300 font-medium rounded-md">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300 font-medium rounded-md">Projects</a>
+                <a href="#contact" class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-full shadow-lg transition duration-300 font-medium">Contact Me</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[#21262d]">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#161b22] hover:text-blue-400">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#161b22] hover:text-blue-400">Skills</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-[#161b22] hover:text-blue-400">Projects</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 mt-2">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section-padding min-h-[85vh] flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-[#161b22] p-8 md:p-16 rounded-3xl shadow-2xl border border-[#21262d]">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight text-white hero-glow">
+                    Hi, I'm <span class="text-blue-400">Vishva Fultariya</span>
+                </h1>
+                <p class="mt-4 text-xl sm:text-2xl text-gray-400 max-w-3xl mx-auto">
+                    A first-year Computer Science and Engineering student exploring the foundations of programming and technology.
+                </p>
+                <div class="mt-8 space-x-4">
+                    <a href="#projects" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-xl transform transition duration-300 hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="inline-block border border-gray-500 hover:border-blue-400 text-gray-300 hover:text-blue-400 font-bold py-3 px-6 rounded-xl transform transition duration-300 hover:shadow-lg">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding border-t border-[#21262d]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">About <span class="text-blue-400">Me</span></h2>
+
+            <div class="bg-[#161b22] p-8 rounded-3xl shadow-xl flex flex-col lg:flex-row items-center lg:space-x-12 border border-[#21262d]">
+                <!-- Image/Avatar (Your Profile Photo Goes Here) -->
+                <div class="flex-shrink-0 mb-8 lg:mb-0">
+                    <!-- 
+                        Attempting the UUID only path without the "uploaded:" prefix as a last resort 
+                        to see if the environment resolves the asset ID directly.
+                        The UUID is: a653fea9-df52-4e62-b969-b4826edbb69f
+                    -->
+                    <img 
+                        id="profile-photo"
+                        src="a653fea9-df52-4e62-b969-b4826edbb69f" 
+                        alt="Vishva Fultariya Profile" 
+                        class="w-48 h-48 rounded-full object-cover border-4 border-blue-400 shadow-lg"
+                        onerror="this.onerror=null; this.src='https://placehold.co/192x192/475569/ffffff?text=Image+Error'; console.error('Error loading profile image. Switched to bare UUID path.')"
+                    >
+                </div>
+                <!-- Text Content -->
+                <div class="text-lg text-gray-300">
+                    <p class="mb-4">
+                        Hello! I'm Vishva, a enthusiastic first-year Computer Science and Engineering student. I'm currently focused on mastering core programming concepts and developing a strong foundation in languages like C and C++.
+                    </p>
+                    <p class="mb-4">
+                        I love the challenge of problem-solving and am excited to apply theoretical knowledge to practical, hands-on projects. This portfolio is a record of my learning journey, featuring small projects I complete in my studies, hackathons, and personal exploration, particularly in basic web technologies (HTML/CSS).
+                    </p>
+                    <p>
+                        I'm actively looking for opportunities to collaborate, learn from experienced developers, and contribute to meaningful projects. I believe in continuous learning and building a robust skill set for the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding border-t border-[#21262d]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Foundational <span class="text-blue-400">Skills</span></h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill Category 1: Programming Fundamentals -->
+                <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#21262d] transition duration-300 hover:scale-[1.02] hover:border-blue-600">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-400">Programming</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> C / C++ (Core)</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Basic Python</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Data Structures (Intro)</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Algorithmic Thinking</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 2: Web Basics -->
+                <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#21262d] transition duration-300 hover:scale-[1.02] hover:border-blue-600">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-400">Web Basics</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> HTML5</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> CSS3</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Tailwind CSS (Familiar)</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Basic JavaScript</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 3: Tools & OS -->
+                <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#21262d] transition duration-300 hover:scale-[1.02] hover:border-blue-600">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-400">Tools & OS</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Git & GitHub (Basic)</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Linux Command Line</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> VS Code</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> MS Office Suite</li>
+                    </ul>
+                </div>
+                <!-- Skill Category 4: Academic Focus -->
+                <div class="bg-[#161b22] p-6 rounded-2xl shadow-xl border border-[#21262d] transition duration-300 hover:scale-[1.02] hover:border-blue-600">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-400">Academic Focus</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Discrete Mathematics</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Digital Logic</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Object-Oriented Concepts</li>
+                        <li class="flex items-center"><span class="text-yellow-400 mr-2">•</span> Technical Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding border-t border-[#21262d]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Academic <span class="text-blue-400">Projects</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project Card 1 (Updated for C/C++ focus) -->
+                <div class="bg-[#161b22] rounded-2xl shadow-2xl overflow-hidden border border-[#21262d] transform transition duration-500 hover:shadow-blue-500/50 hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/21262d/c9d1d9?text=Basic+Calculator+in+C" alt="Basic Calculator in C" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Command Line Calculator</h3>
+                        <p class="text-gray-400 mb-4">A simple arithmetic calculator implemented in C/C++ to practice function calls, loops, and basic input/output operations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-blue-100 bg-blue-600">C/C++</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-green-100 bg-green-600">Fundamentals</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-red-100 bg-red-600">Terminal App</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 (Updated for Web Basics focus) -->
+                <div class="bg-[#161b22] rounded-2xl shadow-2xl overflow-hidden border border-[#21262d] transform transition duration-500 hover:shadow-blue-500/50 hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/21262d/c9d1d9?text=Responsive+Layout+Example" alt="Responsive Layout Example" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Responsive Web Layout</h3>
+                        <p class="text-gray-400 mb-4">A simple static website created using HTML and Tailwind CSS to understand responsive design principles and CSS frameworks.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-purple-100 bg-purple-600">HTML5</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-pink-100 bg-pink-600">CSS3</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-yellow-100 bg-yellow-600">Tailwind</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 (Updated for DSA Focus) -->
+                <div class="bg-[#161b22] rounded-2xl shadow-2xl overflow-hidden border border-[#21262d] transform transition duration-500 hover:shadow-blue-500/50 hover:translate-y-[-5px]">
+                    <img src="https://placehold.co/600x400/21262d/c9d1d9?text=Basic+Sorting+Algorithm" alt="Basic Sorting Algorithm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Sorting Algorithm Implementation</h3>
+                        <p class="text-gray-400 mb-4">A Python script to implement and compare basic sorting algorithms (like Bubble Sort) to understand complexity and efficiency.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-orange-100 bg-orange-600">Python</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-indigo-100 bg-indigo-600">DSA</span>
+                            <span class="text-xs font-semibold inline-block py-1 px-3 rounded-full text-sky-100 bg-sky-600">Algorithm</span>
+                        </div>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            View Details
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding border-t border-[#21262d]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Let's <span class="text-blue-400">Connect</span></h2>
+
+            <div class="max-w-lg mx-auto bg-[#161b22] p-8 rounded-3xl shadow-xl border border-[#21262d]">
+                <p class="text-center text-lg text-gray-300 mb-6">I'm currently seeking mentorship and collaboration opportunities. Send me a message!</p>
+                
+                <form id="contact-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 bg-[#0d1117] border border-[#30363d] rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white transition duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 bg-[#0d1117] border border-[#30363d] rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white transition duration-300">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-400">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 bg-[#0d1117] border border-[#30363d] rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-white transition duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.01]">
+                        Send Message
+                    </button>
+                    <div id="form-message" class="text-center mt-4 hidden text-sm font-medium"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#161b22] border-t border-[#21262d] mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Vishva Fultariya. All rights reserved. | Email: <a href="mailto:vishvafultariya08@gmail.com" class="text-blue-400 hover:underline">vishvafultariya08@gmail.com</a></p>
+            <div class="mt-3 space-x-4 text-xl">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/vishva-fultariya-8a5879372/" target="_blank" class="hover:text-blue-400 transition duration-300" title="LinkedIn Profile">
+                    <!-- LinkedIn SVG -->
+                    <svg class="inline-block w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.535-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/vishva-1502" target="_blank" class="hover:text-blue-400 transition duration-300" title="GitHub Profile">
+                    <!-- GitHub SVG -->
+                    <svg class="inline-block w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.082-.742.083-.727.083-.727 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.809 1.305 3.493.998.108-.77.419-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.465-2.381 1.236-3.221-.124-.305-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.3-1.23 3.3-1.23.653 1.653.242 2.871.118 3.176.771.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.197-6.091 8.197-11.385 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+
+                <!-- Email (Envelope Icon) -->
+                <a href="mailto:vishvafultariya08@gmail.com" class="hover:text-blue-400 transition duration-300" title="Send Email">
+                    <!-- Envelope SVG -->
+                    <svg class="inline-block w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 3.408c0-.687-.492-1.18-.949-1.18h-18.102c-.456 0-.949.493-.949 1.18v16.992c0 .687.493 1.18.949 1.18h18.102c.457 0 .949-.493.949-1.18v-16.992zm-2.001 1.95l-7.999 5.952-8.001-5.952v-1.95h16.001v1.95zm0 13.092h-16.001v-11.17l8.001 5.952 7.999-5.952v11.17z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === JavaScript for Interactions ===
+
+        // 1. Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // 2. Simple Contact Form Submission Handler (Prevents actual submission/page reload)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formMessage = document.getElementById('form-message');
+            const nameInput = document.getElementById('name');
+
+            // Simulate form submission success
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-green-400');
+            formMessage.classList.remove('text-red-400');
+            formMessage.innerHTML = `Thank you, ${nameInput.value}! I've received your message and will be in touch soon.`;
+            
+            // Clear the form
+            this.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
